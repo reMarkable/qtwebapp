@@ -1,0 +1,22 @@
+{
+  "name": "no.remarkable.qtwebapp",
+  "description": "",
+  "author": {
+    "name": "Martin T. H. Sandsmark",
+    "email": "martin.sandsmark@remarkable.no"
+  },
+  "repository": {
+    "type": "GITHUB",
+    "url": "git@github.com:reMarkableAS/QtWebApp.git"
+  },
+  "version": {
+    "label": "1.7.3",
+    "revision": "5a5a7b3",
+    "fingerprint": ""
+  },
+  "dependencies": [
+  ],
+  "license": "BSD_3_CLAUSE",
+  "pri_filename": "QtWebApp.pri",
+  "webpage": ""
+}
