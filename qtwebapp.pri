@@ -1,9 +1,5 @@
 
 HEADERS += \
-    $$PWD/QtWebApp/logging/dualfilelogger.h \
-    $$PWD/QtWebApp/logging/filelogger.h \
-    $$PWD/QtWebApp/logging/logger.h \
-    $$PWD/QtWebApp/logging/logmessage.h \
     $$PWD/QtWebApp/httpserver/httpconnectionhandler.h \
     $$PWD/QtWebApp/httpserver/httpconnectionhandlerpool.h \
     $$PWD/QtWebApp/httpserver/httpcookie.h \
@@ -22,10 +18,6 @@ HEADERS += \
     $$PWD/QtWebApp/qtwebappglobal.h \
 
 SOURCES += \
-    $$PWD/QtWebApp/logging/dualfilelogger.cpp \
-    $$PWD/QtWebApp/logging/filelogger.cpp \
-    $$PWD/QtWebApp/logging/logger.cpp \
-    $$PWD/QtWebApp/logging/logmessage.cpp \
     $$PWD/QtWebApp/httpserver/httpconnectionhandler.cpp \
     $$PWD/QtWebApp/httpserver/httpconnectionhandlerpool.cpp \
     $$PWD/QtWebApp/httpserver/httpcookie.cpp \
@@ -43,7 +35,6 @@ SOURCES += \
     $$PWD/QtWebApp/qtwebappglobal.cpp \
 
 INCLUDEPATH += \
-    $$PWD/QtWebApp/logging/ \
     $$PWD/QtWebApp/httpserver/ \
     $$PWD/QtWebApp/templateengine/ \
     $$PWD/QtWebApp/ \
