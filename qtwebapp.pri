@@ -11,10 +11,6 @@ HEADERS += \
     $$PWD/QtWebApp/httpserver/httpsession.h \
     $$PWD/QtWebApp/httpserver/httpsessionstore.h \
     $$PWD/QtWebApp/httpserver/staticfilecontroller.h \
-    $$PWD/QtWebApp/templateengine/templatecache.h \
-    $$PWD/QtWebApp/templateengine/templateengineconfig.h \
-    $$PWD/QtWebApp/templateengine/template.h \
-    $$PWD/QtWebApp/templateengine/templateloader.h \
     $$PWD/QtWebApp/qtwebappglobal.h \
 
 SOURCES += \
@@ -28,15 +24,10 @@ SOURCES += \
     $$PWD/QtWebApp/httpserver/httpsession.cpp \
     $$PWD/QtWebApp/httpserver/httpsessionstore.cpp \
     $$PWD/QtWebApp/httpserver/staticfilecontroller.cpp \
-    $$PWD/QtWebApp/templateengine/templatecache.cpp \
-    $$PWD/QtWebApp/templateengine/template.cpp \
-    $$PWD/QtWebApp/templateengine/templateengineconfig.cpp \
-    $$PWD/QtWebApp/templateengine/templateloader.cpp \
     $$PWD/QtWebApp/qtwebappglobal.cpp \
 
 INCLUDEPATH += \
     $$PWD/QtWebApp/httpserver/ \
-    $$PWD/QtWebApp/templateengine/ \
     $$PWD/QtWebApp/ \
 
 
