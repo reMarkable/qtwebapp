@@ -21,7 +21,7 @@ if(NOT MSVC)
 endif()
 
 if(CMAKE_BUILD_TYPE MATCHES Debug)
-	if(MSVC)
+        if(WIN32)
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 	else()
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -fsanitize=undefined")
