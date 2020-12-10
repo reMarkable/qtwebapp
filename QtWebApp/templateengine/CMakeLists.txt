@@ -16,7 +16,13 @@ target_include_directories(QtWebAppTemplateEngine PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 	$<INSTALL_INTERFACE:include/qtwebapp/templateengine>
 )
-target_link_libraries(QtWebAppTemplateEngine QtWebAppGlobal Qt5::Core Qt5::Network)
+target_link_libraries(QtWebAppTemplateEngine QtWebAppGlobal Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network)
+
+if (QT_VERSION_MAJOR EQUAL "6")
+    find_package(Qt6 COMPONENTS Core5Compat REQUIRED)
+    target_link_libraries(QtWebAppTemplateEngine Qt6::Core5Compat)
+endif()
+
 set_target_properties(QtWebAppTemplateEngine PROPERTIES
 		VERSION ${qtwebapp_VERSION}
 		SOVERSION ${qtwebapp_MAJOR}
