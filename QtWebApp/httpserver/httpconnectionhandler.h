@@ -121,3 +121,4 @@ private slots:
 };
 
 } // end of namespace
+Q_DECLARE_METATYPE(qtwebapp::tSocketDescriptor)
