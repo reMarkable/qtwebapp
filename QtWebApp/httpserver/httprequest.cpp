@@ -151,6 +151,9 @@ void HttpRequest::readHeader(QTcpSocket* socket)
 void HttpRequest::readBody(QTcpSocket* socket)
 {
 	Q_ASSERT(expectedBodySize!=0);
+	if (!QDir(tmpDir).exists()) {
+	     QDir().mkpath(tmpDir);
+	}
 	if (boundary.isEmpty())
 	{
 		// normal body, no multipart
