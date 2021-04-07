@@ -20,13 +20,6 @@
 
 namespace qtwebapp {
 
-/** Alias type definition, for compatibility to different Qt versions */
-#if QT_VERSION >= 0x050000
-typedef qintptr tSocketDescriptor;
-#else
-typedef int tSocketDescriptor;
-#endif
-
 /** Alias for QSslConfiguration if OpenSSL is not supported */
 #ifdef QT_NO_SSL
 #  define QSslConfiguration QObject
@@ -106,7 +99,7 @@ public slots:
 	  Received from from the listener, when the handler shall start processing a new connection.
 	  @param socketDescriptor references the accepted connection.
 	*/
-	void handleConnection(qtwebapp::tSocketDescriptor socketDescriptor);
+	void handleConnection(qintptr socketDescriptor);
 	
 private slots:
 	
@@ -124,4 +117,3 @@ private slots:
 };
 
 } // end of namespace
-Q_DECLARE_METATYPE(qtwebapp::tSocketDescriptor)
