@@ -89,7 +89,7 @@ void HttpConnectionHandler::run()
 }
 
 
-void HttpConnectionHandler::handleConnection(tSocketDescriptor socketDescriptor)
+void HttpConnectionHandler::handleConnection(qintptr socketDescriptor)
 {
 #ifdef CMAKE_DEBUG
 	qDebug("HttpConnectionHandler (%p): handle new connection", this);
