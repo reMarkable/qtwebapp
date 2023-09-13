@@ -31,7 +31,11 @@ install(TARGETS QtWebAppGlobal
 
 add_subdirectory(logging)
 add_subdirectory(httpserver)
-add_subdirectory(templateengine)
+
+option(WITH_TEMPLATEENGINE "Template engine" OFF)
+if (WITH_TEMPLATEENGINE)
+  add_subdirectory(templateengine)
+endif()
 
 configure_file(cmake/QtWebAppConfig.cmake.in        QtWebAppConfig.cmake        @ONLY)
 configure_file(cmake/QtWebAppConfigVersion.cmake.in QtWebAppConfigVersion.cmake @ONLY)
