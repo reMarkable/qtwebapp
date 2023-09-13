@@ -5,10 +5,6 @@ set(qtwebapp_VERSION ${qtwebapp_MAJOR}.${qtwebapp_MINOR}.${qtwebapp_PATCH})
 
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Network REQUIRED)
 
-if (Qt6_FOUND)
-    find_package(Qt6 COMPONENTS Core5Compat REQUIRED)
-endif()
-
 add_definitions(-DQTWEBAPPLIB_EXPORT)
 
 add_definitions("-DCMAKE_QTWEBAPP_SO")
