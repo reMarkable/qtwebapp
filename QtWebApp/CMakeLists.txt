@@ -5,10 +5,6 @@ set(qtwebapp_VERSION ${qtwebapp_MAJOR}.${qtwebapp_MINOR}.${qtwebapp_PATCH})
 
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Network REQUIRED)
 
-add_definitions(-DQTWEBAPPLIB_EXPORT)
-
-add_definitions("-DCMAKE_QTWEBAPP_SO")
-
 configure_file(qtwebappglobal.h.in qtwebappglobal.h @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/qtwebappglobal.h
 	    DESTINATION include/qtwebapp/)
@@ -25,6 +21,8 @@ set_target_properties(QtWebAppGlobal PROPERTIES
 		VERSION ${qtwebapp_VERSION}
 		SOVERSION ${qtwebapp_MAJOR}
 	)
+target_compile_definitions(QtWebAppGlobal PRIVATE CMAKE_QTWEBAPP_SO)
+
 install(TARGETS QtWebAppGlobal
 		EXPORT QtWebAppTargets
 		LIBRARY DESTINATION lib

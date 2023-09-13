@@ -26,6 +26,8 @@ set_target_properties(QtWebAppTemplateEngine PROPERTIES
 		SOVERSION ${qtwebapp_MAJOR}
 	)
 
+target_compile_definitions(QtWebAppTemplateEngine PRIVATE CMAKE_QTWEBAPP_SO)
+
 install(TARGETS QtWebAppTemplateEngine
         EXPORT QtWebAppTargets
 		LIBRARY DESTINATION lib
