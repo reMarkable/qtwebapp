@@ -35,6 +35,8 @@ set_target_properties(QtWebAppHttpServer PROPERTIES
 		SOVERSION ${qtwebapp_MAJOR}
 	)
 
+target_compile_definitions(QtWebAppHttpServer PRIVATE CMAKE_QTWEBAPP_SO)
+
 install(TARGETS QtWebAppHttpServer
 		EXPORT QtWebAppTargets
         LIBRARY DESTINATION lib

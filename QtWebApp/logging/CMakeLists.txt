@@ -12,6 +12,8 @@ set(logging_SOURCES
 	)
 
 add_library(QtWebAppLogging SHARED ${logging_HEADERS} ${logging_SOURCES})
+target_compile_definitions(QtWebAppLogging PRIVATE CMAKE_QTWEBAPP_SO)
+
 target_include_directories(QtWebAppLogging PUBLIC
 	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
 	$<INSTALL_INTERFACE:include/qtwebapp/logging>

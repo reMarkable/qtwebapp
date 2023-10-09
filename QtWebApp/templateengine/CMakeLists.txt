@@ -18,12 +18,15 @@ target_include_directories(QtWebAppTemplateEngine PUBLIC
 )
 target_link_libraries(QtWebAppTemplateEngine QtWebAppGlobal Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Network)
 if (Qt6_FOUND)
+    find_package(Qt6 COMPONENTS Core5Compat REQUIRED)
     target_link_libraries(QtWebAppTemplateEngine Qt6::Core5Compat)
 endif()
 set_target_properties(QtWebAppTemplateEngine PROPERTIES
 		VERSION ${qtwebapp_VERSION}
 		SOVERSION ${qtwebapp_MAJOR}
 	)
+
+target_compile_definitions(QtWebAppTemplateEngine PRIVATE CMAKE_QTWEBAPP_SO)
 
 install(TARGETS QtWebAppTemplateEngine
         EXPORT QtWebAppTargets
