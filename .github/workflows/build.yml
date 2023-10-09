@@ -21,10 +21,7 @@ jobs:
           - cc: "clang"
             cxx: "clang++"
         qt:
-          - version: "5.12.2"
-            extra_modules: ""
-          - version: "6.2.0"
-            extra_modules: "qt5compat"
+          - version: "6.5.0"
         exclude:
           - os: "macos-latest"
             compiler:
@@ -34,7 +31,7 @@ jobs:
       - uses: jurplel/install-qt-action@v2
         with:
           version: ${{ matrix.qt.version }}
-          modules: ${{ matrix.qt.extra_modules }}
+          modules: qt5compat
       
       - name: Build QtWebApp
         run: |
@@ -81,14 +78,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: Windows MinGW 8.1
-            arch: win32_mingw81
-            generator: "-G 'Unix Makefiles'"
-            qt_version: "5.15.2"
           - name: Windows MSVC 2019
             arch: win64_msvc2019_64
             generator: ""
-            qt_version: "5.15.2"
+            qt_version: "6.5.0"
 
     steps:
       - uses: actions/checkout@v2
@@ -96,6 +89,7 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           version: ${{ matrix.qt_version }}
+          modules: qt5compat
 
       - uses: jurplel/install-qt-action@v2
         if: matrix.arch == 'win32_mingw81'
