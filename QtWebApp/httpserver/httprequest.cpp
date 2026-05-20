@@ -153,7 +153,13 @@ void HttpRequest::readBody(QTcpSocket *socket) {
 			tempFile = new QTemporaryFile(tmpDir);
 		}
 		if (!tempFile->isOpen()) {
-			tempFile->open();
+			if (!tempFile->open()) {
+				qWarning("HttpRequest: could not open temp dir");
+				delete tempFile;
+				tempFile = nullptr;
+				status = abort;
+				return;
+			}
 		}
 		// Transfer data in 64kb blocks
 		qint64 fileSize = tempFile->size();
@@ -418,7 +424,11 @@ void HttpRequest::parseMultiPartFile() {
 					// this is a file
 					if (!uploadedFile) {
 						uploadedFile = new QTemporaryFile(tmpDir);
-						uploadedFile->open();
+						if (!uploadedFile->open()) {
+							qCritical("HttpRequest: error opening temp file");
+							delete uploadedFile;
+							return;
+						}
 					}
 					uploadedFile->write(line);
 					if (uploadedFile->error()) {
