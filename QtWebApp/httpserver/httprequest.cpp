@@ -427,6 +427,7 @@ void HttpRequest::parseMultiPartFile() {
 				}
 			}
 		}
+		delete uploadedFile;
 	}
 	if (tempFile->error()) {
 		qCritical("HttpRequest: cannot read temp file, %s", qPrintable(tempFile->errorString()));
