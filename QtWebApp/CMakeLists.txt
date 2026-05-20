@@ -1,6 +1,6 @@
 set(qtwebapp_MAJOR 1)
 set(qtwebapp_MINOR 8)
-set(qtwebapp_PATCH 3)
+set(qtwebapp_PATCH 4)
 set(qtwebapp_VERSION ${qtwebapp_MAJOR}.${qtwebapp_MINOR}.${qtwebapp_PATCH})
 
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Network REQUIRED)
